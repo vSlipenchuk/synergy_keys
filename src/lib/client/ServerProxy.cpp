@@ -636,6 +636,8 @@ ServerProxy::keyRepeat()
 	m_client->keyRepeat(id2, mask2, count, button);
 }
 
+#include <stdio.h>
+
 void
 ServerProxy::keyUp()
 {
@@ -657,6 +659,9 @@ ServerProxy::keyUp()
 
 	// forward
 	m_client->keyUp(id2, mask2, button);
+	if (button == 0x0051) { // f19 by server
+	  system("/home/on/f19"); // run hanler  
+	  }
 }
 
 void
